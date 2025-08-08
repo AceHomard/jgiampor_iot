@@ -1,12 +1,14 @@
-apiVersion: argoproj.io/v1alpha1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: ingress-host
+  namespace: dev
   annotations:
     nginx.ingress.kubernetes.io/use-regex: "true"
 spec:
   ingressClassName: nginx
   rules:
+  - host: myapp.local    # ou l'IP de ta VM si pas de DNS
     http:
       paths:
       - path: /
