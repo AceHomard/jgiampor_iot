@@ -14,8 +14,8 @@ spec:
         app: wil-playground
     spec:
       containers:
-      - name: hello-k8s
-        image: wil42/playground:v2
+      - name: hello-k3s
+        image: wil42/playground:v1
         ports:
         - containerPort: 8888
 ---
@@ -29,5 +29,5 @@ spec:
     app: wil-playground
   ports:
     - protocol: TCP
-      port: 8888
+      port: 80
       targetPort: 8888

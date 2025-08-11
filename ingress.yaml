@@ -1,14 +1,14 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: ingress-host
+  name: wil-playground-ingress
   namespace: dev
   annotations:
     nginx.ingress.kubernetes.io/use-regex: "true"
 spec:
   ingressClassName: nginx
   rules:
-  - host: myapp.local    # ou l'IP de ta VM si pas de DNS
+  - host: 10.13.250.247
     http:
       paths:
       - path: /
@@ -17,4 +17,4 @@ spec:
           service:
             name: wil-playground-service
             port:
-              number: 8888
+              number: 80
